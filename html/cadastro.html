@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Pet - Cadastre-se</title>
+</head>
+<body class="register-page">
+
+  <!-- Cabeçalho (Barra Laranja Superior) -->
+  <header class="topbar">
+    <div class="brand-container">
+      <a href="index.html" class="brand-link">
+        <img src="logo-centralpet.png" alt="Logo Central Pet" class="brand-logo">
+        <span class="brand-title">Central <span class="brand-highlight">Pet</span></span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Área Principal (Fundo de Patinhas) -->
+  <main class="register-main">
+
+    <h1 class="page-title">Cadastro</h1>
+
+    <!-- Card/Painel de Cadastro Centralizado -->
+    <div class="register-card">
+      <form action="/cadastrar" method="POST" class="register-form">
+
+        <!-- Campo E-mail -->
+        <div class="form-group">
+          <label for="user-email" class="form-label">E-mail:</label>
+          <input 
+            type="email" 
+            id="user-email" 
+            name="email" 
+            class="form-input" 
+            placeholder="Insira seu e-mail" 
+            required 
+            maxlength="254" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          >
+        </div>
+
+        <!-- Tipo de Conta (Select) -->
+        <div class="form-group">
+          <select id="tipo_conta" name="tipo_conta" class="form-select" required>
+            <option value="" disabled selected>Deseja cadastrar como...?</option>
+            <option value="usuario">Usuário comum</option>
+            <option value="orgao_legal">Órgão Legal</option>
+          </select>
+        </div>
+
+        <!-- Data de Nascimento (Três campos lado a lado) -->
+        <div class="form-group">
+          <label class="form-label">Data de nascimento:</label>
+          <div class="date-group">
+            <input 
+              type="text" 
+              id="nascimento-dia" 
+              name="nascimento_dia" 
+              class="form-input input-date" 
+              placeholder="DD" 
+              maxlength="2" 
+              required
+            >
+            <input 
+              type="text" 
+              id="nascimento-mes" 
+              name="nascimento_mes" 
+              class="form-input input-date" 
+              placeholder="MM" 
+              maxlength="2" 
+              required
+            >
+            <input 
+              type="text" 
+              id="nascimento-ano" 
+              name="nascimento_ano" 
+              class="form-input input-date-year" 
+              placeholder="YYYY" 
+              maxlength="4" 
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Campo Crie uma Senha -->
+        <div class="form-group">
+          <label for="senha" class="form-label">Crie uma senha:</label>
+          <input 
+            type="password" 
+            id="senha" 
+            name="senha" 
+            class="form-input" 
+            placeholder="6 a 8 dígitos" 
+            required
+            minlength="6"
+            maxlength="8"
+          >
+        </div>
+
+        <!-- Campo Confirmar Senha -->
+        <div class="form-group">
+          <label for="confirmarSenha" class="form-label">Confirme sua senha:</label>
+          <input 
+            type="password" 
+            id="confirmarSenha" 
+            name="confirmarSenha" 
+            class="form-input" 
+            placeholder="Insira sua senha" 
+            required
+            minlength="6"
+            maxlength="8"
+          >
+        </div>
+
+        <!-- Botão de Envio (Vermelho) -->
+        <div class="form-actions">
+          <button type="submit" id="confirmarCadastro" class="btn-primary">Confirmar</button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Rodapé (Faixa Azul Escura Inferior) -->
+  <footer class="footer-bar">
+    <!-- Conteúdo do rodapé -->
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Pet - Página Principal do Usuário</title>
+</head>
+<body class="dashboard-body">
+
+  <!-- Barra de Navegação Superior -->
+  <header class="topbar">
+    <div class="brand-container">
+      <a href="index.html" class="brand-link">
+        <img src="logo-centralpet.png" alt="Logo Central Pet" class="brand-logo">
+        <span class="brand-title">Central <span class="brand-highlight">Pet</span></span>
+      </a>
+    </div>
+
+    <nav class="user-menu">
+      <a href="perfil.html" class="user-avatar-link" aria-label="Perfil do usuário">
+        <img src="icone-perfil.png" alt="Perfil" class="user-avatar-img">
+      </a>
+    </nav>
+  </header>
+
+  <!-- Área do Layout Principal -->
+  <div class="dashboard-container">
+    
+    <!-- Barra Lateral (Sidebar) -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="denunciar.html" class="sidebar-link">
+              <span class="folder-icon">📁</span>
+              <span class="link-text">Denúnciar</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="adotar.html" class="sidebar-link">
+              <span class="folder-icon">📁</span>
+              <span class="link-text">Adotar</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="doar.html" class="sidebar-link">
+              <span class="folder-icon">📁</span>
+              <span class="link-text">Doar</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botão que exibe a caixa de mensagem -->
+      <div class="sidebar-action">
+        <button type="button" class="btn-escrever" onclick="abrirCaixaMensagem()">Escrever</button>
+      </div>
+    </aside>
+
+    <!-- Área de Conteúdo Principal -->
+    <main class="main-content">
+
+      <!-- Card de Nova Mensagem (Inicia escondido via style inline) -->
+      <section id="caixaMensagem" class="message-card" style="display: none;">
+        
+        <!-- Cabeçalho da Caixa de Mensagem -->
+        <div class="message-header">
+          <h2>Nova mensagem</h2>
+          <button type="button" class="btn-close-message" onclick="fecharCaixaMensagem()" aria-label="Fechar mensagem">✕</button>
+        </div>
+
+        <!-- Formulário de Envio -->
+        <form action="/enviar-mensagem" method="POST" class="message-form">
+          
+          <div class="form-row recipient-row">
+            <label for="para" class="row-label">
+              <strong>Para <span class="cc-cco-text">(Cc Cco)</span> :</strong>
+            </label>
+            <input 
+              type="email" 
+              id="para" 
+              name="para" 
+              class="message-input" 
+              required
+            >
+          </div>
+
+          <div class="form-row subject-row">
+            <label for="assunto" class="row-label">Assunto:</label>
+            <input 
+              type="text" 
+              id="assunto" 
+              name="assunto" 
+              class="message-input"
+            >
+          </div>
+
+          <div class="form-row body-row">
+            <textarea 
+              name="mensagem" 
+              id="mensagem" 
+              class="message-textarea" 
+              rows="10" 
+              required
+            ></textarea>
+          </div>
+
+          <div class="message-actions">
+            <button type="submit" class="btn-send">Enviar</button>
+          </div>
+
+        </form>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Script com manipulação direta de style.display (Padrão W3C) -->
+  <script>
+    function abrirCaixaMensagem() {
+      document.getElementById('caixaMensagem').style.display = 'block';
+    }
+
+    function fecharCaixaMensagem() {
+      document.getElementById('caixaMensagem').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
