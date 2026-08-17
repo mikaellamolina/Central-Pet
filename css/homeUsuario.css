@@ -1,0 +1,326 @@
+/* ========================================
+CENTRAL PET — ESTILO PRINCIPAL (HOME)
+======================================== */
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background-color: #FFEFE5;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ========================================
+CABEÇALHO
+======================================== */
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: #FFA56D; /* Laranja da marca */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+}
+
+/* ---------- LOGO ---------- */
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #000000;
+}
+
+.brand-highlight {
+    color: #E00808;
+}
+
+/* ---------- NAVEGAÇÃO ---------- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #0600A9;
+}
+
+/* ---------- BOTÕES DE ACESSO ---------- */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-login,
+.btn-register {
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.btn-login {
+    color: #FFFFFF;
+    background-color: #0600A9;
+    border: 2px solid #0600A9;
+}
+
+.btn-login:hover {
+    background-color: #FFFFFF;
+    color: #0600A9;
+}
+
+.btn-register {
+    color: #FFFFFF;
+    background-color: #E00808;
+    border: 2px solid #E00808;
+}
+
+.btn-register:hover {
+    background-color: #FFFFFF;
+    color: #E00808;
+    border-color: #E00808;
+}
+
+/* ========================================
+HERO / BANNER PRINCIPAL
+======================================== */
+.hero-section {
+    width: 100%;
+    min-height: 600px; 
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    background-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.5) 0%, 
+        rgba(0, 0, 0, 0.2) 50%, 
+        transparent 100%
+    ), url("../img/banner-pets.png");
+    background-size: cover;
+    background-position: center center; 
+}
+
+.hero-content {
+    max-width: 500px;
+    color: #FFFFFF;
+}
+
+.hero-title {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilo para a palavra "amor" em cursivo e amarelo */
+.hero-title em {
+    font-family: 'Alex Brush', cursive;
+    color: #F5D547; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 68px; 
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    max-width: 420px;
+}
+
+/* ========================================
+FAIXA DIVISÓRIA (Retângulo Azul)
+======================================== */
+.divider-bar {
+    width: 100%;
+    height: 130px;
+    background-color: #170A6C; 
+}
+
+/* ========================================
+CONTEÚDO PRINCIPAL E ZIG-ZAG
+======================================== */
+.main-sections {
+    width: 100%;
+    background-image: url("../img/fundo-patinhas.png");
+    background-size: 300px;
+    background-repeat: repeat;
+    padding-top: 30px; /* Cria a fresta de patinhas no topo */
+}
+
+/* Seções Informativas de Largura Total */
+.info-section {
+    width: 100%;
+    padding: 80px 8%;
+    min-height: 400px; 
+    display: flex;
+    align-items: center;
+}
+
+/* Cores Alternadas */
+.section-beige { background-color: #E4B99E; }
+.section-cream { background-color: #FFF2E8; }
+
+/* O Container do Texto e Imagem */
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* O SEGREDO DO ZIG-ZAG: Inverte a ordem nas seções pares */
+.info-section:nth-child(even) .section-container {
+    flex-direction: row-reverse;
+}
+
+/* Estilos de Texto */
+.text-block {
+    flex: 1;
+    text-align: left;
+}
+
+.text-block h2 {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 38px;
+    color: #170A6C;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.text-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333333;
+}
+
+/* Estilos da Imagem Reservada */
+.image-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 280px;
+    background-color: rgba(0, 0, 0, 0.05); /* Fundo sutil */
+    border: 3px dashed rgba(0, 0, 0, 0.2); /* Borda pontilhada */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Quando você for adicionar uma imagem real depois, 
+você criará uma tag <img> dentro da .image-block, com 100% de largura e border-radius de 20px */
+
+/* ========================================
+RODAPÉ (Espesso e Azul)
+======================================== */
+.footer-bar {
+    width: 100%;
+    min-height: 250px; 
+    background-color: #170A6C;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.footer-container p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ========================================
+RESPONSIVIDADE (Celulares e Tablets)
+======================================== */
+@media (max-width: 900px) {
+    /* Desativa o Zig-Zag em telas pequenas para empilhar tudo */
+    .section-container,
+    .info-section:nth-child(even) .section-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .text-block {
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 38px;
+    }
+    
+    .hero-title em {
+        font-size: 44px;
+    }
+    
+    .divider-bar {
+        height: 80px;
+    }
+}

@@ -3,130 +3,307 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Central Pet - Página Principal do Usuário</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/homeUsuario.css">
 </head>
+
 <body class="dashboard-body">
 
-  <!-- Barra de Navegação Superior -->
+  <!-- BARRA SUPERIOR -->
   <header class="topbar">
+
     <div class="brand-container">
+
       <a href="index.html" class="brand-link">
-        <img src="logo-centralpet.png" alt="Logo Central Pet" class="brand-logo">
-        <span class="brand-title">Central <span class="brand-highlight">Pet</span></span>
+
+        <img
+          src="../img/logo-centralpet.png"
+          alt="Logo Central Pet"
+          class="brand-logo"
+        >
+
+        <span class="brand-title">
+          Central <span class="brand-highlight">Pet</span>
+        </span>
+
       </a>
+
     </div>
 
+    <!-- PERFIL -->
     <nav class="user-menu">
-      <a href="perfil.html" class="user-avatar-link" aria-label="Perfil do usuário">
-        <img src="icone-perfil.png" alt="Perfil" class="user-avatar-img">
+
+      <a
+        href="perfil.html"
+        class="user-avatar-link"
+        aria-label="Perfil do usuário"
+      >
+
+        <img
+          src="../img/icone-perfil.png"
+          alt="Perfil"
+          class="user-avatar-img"
+        >
+
       </a>
+
     </nav>
+
   </header>
 
-  <!-- Área do Layout Principal -->
+
+  <!-- ÁREA PRINCIPAL -->
   <div class="dashboard-container">
-    
-    <!-- Barra Lateral (Sidebar) -->
+
+
+    <!-- BARRA LATERAL -->
     <aside class="sidebar">
+
       <nav class="sidebar-nav">
+
         <ul class="sidebar-menu">
+
+
+          <!-- DENUNCIAR -->
           <li class="sidebar-item">
-            <a href="denunciar.html" class="sidebar-link">
-              <span class="folder-icon">📁</span>
-              <span class="link-text">Denúnciar</span>
+
+            <a
+              href="denunciar.html"
+              class="sidebar-link"
+            >
+
+              <img
+                src="../img/pasta.png"
+                alt=""
+                class="folder-icon"
+              >
+
+              <span class="link-text">
+                Denunciar
+              </span>
+
             </a>
+
           </li>
+
+
+          <!-- ADOTAR -->
           <li class="sidebar-item">
-            <a href="adotar.html" class="sidebar-link">
-              <span class="folder-icon">📁</span>
-              <span class="link-text">Adotar</span>
+
+            <a
+              href="adotar.html"
+              class="sidebar-link"
+            >
+
+              <img
+                src="../img/pasta.png"
+                alt=""
+                class="folder-icon"
+              >
+
+              <span class="link-text">
+                Adotar
+              </span>
+
             </a>
+
           </li>
+
+
+          <!-- DOAR -->
           <li class="sidebar-item">
-            <a href="doar.html" class="sidebar-link">
-              <span class="folder-icon">📁</span>
-              <span class="link-text">Doar</span>
+
+            <a
+              href="doar.html"
+              class="sidebar-link"
+            >
+
+              <img
+                src="../img/pasta.png"
+                alt=""
+                class="folder-icon"
+              >
+
+              <span class="link-text">
+                Doar
+              </span>
+
             </a>
+
           </li>
+
+
         </ul>
+
       </nav>
 
-      <!-- Botão que exibe a caixa de mensagem -->
+
+      <!-- BOTÃO ESCREVER -->
       <div class="sidebar-action">
-        <button type="button" class="btn-escrever" onclick="abrirCaixaMensagem()">Escrever</button>
+
+        <button
+          type="button"
+          class="btn-escrever"
+          onclick="abrirCaixaMensagem()"
+        >
+          Escrever
+        </button>
+
       </div>
+
     </aside>
 
-    <!-- Área de Conteúdo Principal -->
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
 
-      <!-- Card de Nova Mensagem (Inicia escondido via style inline) -->
-      <section id="caixaMensagem" class="message-card" style="display: none;">
-        
-        <!-- Cabeçalho da Caixa de Mensagem -->
+
+      <!-- CAIXA DE MENSAGEM -->
+      <section
+        id="caixaMensagem"
+        class="message-card"
+        style="display: none;"
+      >
+
+
+        <!-- CABEÇALHO DA MENSAGEM -->
         <div class="message-header">
-          <h2>Nova mensagem</h2>
-          <button type="button" class="btn-close-message" onclick="fecharCaixaMensagem()" aria-label="Fechar mensagem">✕</button>
+
+          <h2>
+            Nova mensagem
+          </h2>
+
+          <button
+            type="button"
+            class="btn-close-message"
+            onclick="fecharCaixaMensagem()"
+            aria-label="Fechar mensagem"
+          >
+            ✕
+          </button>
+
         </div>
 
-        <!-- Formulário de Envio -->
-        <form action="/enviar-mensagem" method="POST" class="message-form">
-          
+
+        <!-- FORMULÁRIO -->
+        <form
+          action="/enviar-mensagem"
+          method="POST"
+          class="message-form"
+        >
+
+
+          <!-- DESTINATÁRIO -->
           <div class="form-row recipient-row">
-            <label for="para" class="row-label">
-              <strong>Para <span class="cc-cco-text">(Cc Cco)</span> :</strong>
+
+            <label
+              for="para"
+              class="row-label"
+            >
+
+              <strong>
+                Para
+                <span class="cc-cco-text">
+                  (Cc Cco)
+                </span>
+                :
+              </strong>
+
             </label>
-            <input 
-              type="email" 
-              id="para" 
-              name="para" 
-              class="message-input" 
+
+            <input
+              type="email"
+              id="para"
+              name="para"
+              class="message-input"
               required
             >
+
           </div>
 
+
+          <!-- ASSUNTO -->
           <div class="form-row subject-row">
-            <label for="assunto" class="row-label">Assunto:</label>
-            <input 
-              type="text" 
-              id="assunto" 
-              name="assunto" 
+
+            <label
+              for="assunto"
+              class="row-label"
+            >
+              Assunto:
+            </label>
+
+            <input
+              type="text"
+              id="assunto"
+              name="assunto"
               class="message-input"
             >
+
           </div>
 
+
+          <!-- MENSAGEM -->
           <div class="form-row body-row">
-            <textarea 
-              name="mensagem" 
-              id="mensagem" 
-              class="message-textarea" 
-              rows="10" 
+
+            <textarea
+              name="mensagem"
+              id="mensagem"
+              class="message-textarea"
+              rows="10"
               required
             ></textarea>
+
           </div>
 
+
+          <!-- ENVIAR -->
           <div class="message-actions">
-            <button type="submit" class="btn-send">Enviar</button>
+
+            <button
+              type="submit"
+              class="btn-send"
+            >
+              Enviar
+            </button>
+
           </div>
+
 
         </form>
 
       </section>
 
+
     </main>
 
   </div>
 
-  <!-- Script com manipulação direta de style.display (Padrão W3C) -->
+
+  <!-- JAVASCRIPT -->
   <script>
+
     function abrirCaixaMensagem() {
-      document.getElementById('caixaMensagem').style.display = 'block';
+
+      document.getElementById("caixaMensagem").style.display = "block";
+
     }
 
+
     function fecharCaixaMensagem() {
-      document.getElementById('caixaMensagem').style.display = 'none';
+
+      document.getElementById("caixaMensagem").style.display = "none";
+
     }
+
   </script>
+
 
 </body>
 </html>

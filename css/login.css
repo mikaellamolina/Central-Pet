@@ -1,0 +1,159 @@
+/* ========================================
+CENTRAL PET - LOGIN
+======================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background-color: #FFEFE5;
+}
+
+a { text-decoration: none; }
+
+/* CABEÇALHO */
+.topbar {
+    width: 100%;
+    height: 70px;
+    background-color: #FFA56D;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    flex-shrink: 0;
+}
+
+.brand-container { display: flex; align-items: center; }
+.brand-link { display: flex; align-items: center; gap: 10px; }
+.brand-logo { width: 40px; height: 40px; object-fit: contain; }
+
+.brand-title {
+    font-family: 'Abhaya Libre', serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #000000;
+}
+.brand-highlight { color: #E00808; }
+
+/* ÁREA PRINCIPAL COM AS PATINHAS */
+.login-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #FFEFE5;
+    background-image: url("../img/fundo-patinhas.png");
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 320px;
+}
+
+.page-title {
+    margin-bottom: 24px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+}
+
+/* CARD DE LOGIN */
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #E4B99E;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-form { width: 100%; }
+.form-group { margin-bottom: 15px; }
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+}
+
+/* CAMPOS DE INPUT */
+.form-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #D8D8D8;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-input::placeholder { color: #999999; }
+.form-input:focus {
+    border-color: #0600A9;
+    box-shadow: 0 0 0 2px rgba(6, 0, 169, 0.10);
+}
+
+/* SALVAR SENHA & ESQUECI A SENHA */
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-input {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+    accent-color: #0600A9;
+}
+
+.checkbox-label { font-size: 13px; color: #333333; }
+.checkbox-label strong { font-weight: 700; }
+
+.form-forgot { margin-top: 10px; }
+.forgot-link { color: #0600A9; font-size: 13px; font-weight: 500; }
+.forgot-link:hover { color: #E00808; text-decoration: underline; }
+
+/* BOTÃO CONFIRMAR */
+.form-actions { margin-top: 25px; }
+.btn-primary {
+    width: 100%;
+    height: 42px;
+    border: 2px solid #E00808;
+    border-radius: 6px;
+    background-color: #E00808;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.btn-primary:hover { background-color: #0600A9; border-color: #0600A9; }
+
+/* RODAPÉ */
+.footer-bar {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0600A9;
+    color: #FFFFFF;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .topbar { padding: 0 20px; }
+    .page-title { font-size: 36px; }
+}
